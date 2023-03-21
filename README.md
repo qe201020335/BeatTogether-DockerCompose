@@ -1,4 +1,7 @@
 # BeatTogether-DockerCompose
+[![en](https://img.shields.io/badge/lang-en-blue.svg?style=for-the-badge)](/README.md)
+[![zh](https://img.shields.io/badge/语言-中文-red.svg?style=for-the-badge)](/README.zh.md)
+
 A simple guide on hosting BeatTogether server using docker compose
 
 You are welcomed to use the discussion board. [Discussions](https://github.com/qe201020335/BeatTogether-DockerCompose/discussions)
