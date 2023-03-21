@@ -1,0 +1,11 @@
+{
+  "MasterServer": {
+    "EndPoint": "0.0.0.0:2328"
+  },
+  "Serilog": {
+    "File": {
+      "FileSizeLimitBytes": "33554432",
+      "RetainedFileCountLimit": 8
+    }
+  }
+}

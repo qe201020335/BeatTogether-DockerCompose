@@ -1,0 +1,34 @@
+{
+  "Urls": "http://0.0.0.0:23280",
+  "Status": {
+    "MinimumAppVersion": "1.28.0",
+    "RequiredMods": [
+      {
+        "id": "MultiplayerCore",
+        "version": "1.2.0"
+      },
+      {
+        "id": "BeatTogether",
+        "version": "2.0.1"
+      },
+      {
+        "id": "BeatSaberPlus_SongOverlay",
+        "version": "4.6.1"
+      },
+      {
+        "id": "EditorEX",
+        "version": "1.2.0"
+      },
+      {
+        "id": "LeaderboardCore",
+        "version": "1.2.2"
+      }
+    ]
+  },
+  "Serilog": {
+    "File": {
+      "FileSizeLimitBytes": "33554432",
+      "RetainedFileCountLimit": 8
+    }
+  }
+}
