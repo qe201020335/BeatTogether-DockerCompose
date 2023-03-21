@@ -11,6 +11,10 @@ A simple guide on hosting BeatTogether server using docker compose
   6. Add this server to the BeatTogether mod's config. See [below](#beattogether-mod-configuration)
 
 ## Json Configs
+ - The options included here are not exhaustive but most likely what matters. 
+ - You need to look into the servers' source code to find more available options
+ - The descriptions are based on my understanding of the project.
+
 ### The Master Server 
 `master.json`
 ```
