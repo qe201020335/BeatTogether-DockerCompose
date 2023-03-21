@@ -1,6 +1,8 @@
 # BeatTogether-DockerCompose
 A simple guide on hosting BeatTogether server using docker compose
 
+You are welcomed to use the discussion board. [Discussions](https://github.com/qe201020335/BeatTogether-DockerCompose/discussions)
+
 ## How to Host
   0. Make sure you are on Linux and have Docker installed
   1. Clone or download this repo
