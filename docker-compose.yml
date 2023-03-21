@@ -1,0 +1,64 @@
+version: "3.9"
+services:
+
+  rabbitmq:
+    image: rabbitmq:3.9-management
+    container_name: rabbitmq
+    network_mode: host
+    healthcheck:
+      test: rabbitmq-diagnostics -q ping
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  BeatTogether.MasterServer:
+    container_name: btmaster
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+    image: ghcr.io/beattogether/beat-together-master-server:master
+    network_mode: host
+    restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-size: 4m
+    volumes:
+      - ${PWD}/master.json:/app/appsettings.Production.json
+      - ${PWD}/logs:/app/logs
+
+  BeatTogether.DedicatedServer:
+    container_name: btdedicated
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+      BeatTogether.MasterServer:
+        condition: service_started
+    image: ghcr.io/beattogether/beat-together-dedicated-server:master
+    network_mode: host
+    restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-size: 4m
+    volumes:
+      - ${PWD}/dedicated.json:/app/appsettings.Production.json
+      - ${PWD}/logs:/app/logs
+
+  BeatTogether.Status.Api:
+    container_name: btapi
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+      BeatTogether.MasterServer:
+        condition: service_started
+    image: ghcr.io/beattogether/beat-together-status-api:master
+    network_mode: host
+    restart: unless-stopped
+    logging:
+      driver: json-file
+      options:
+        max-size: 4m
+    volumes:
+      - ${PWD}/api.json:/app/appsettings.Production.json
+      - ${PWD}/logs:/app/logs
