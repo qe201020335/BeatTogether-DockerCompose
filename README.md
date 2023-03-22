@@ -41,7 +41,7 @@ You are welcomed to use the discussion board. [Discussions](https://github.com/q
 ```
 {
   "Node": {
-    "HostName": "192.168.1.250",         // public ip or host name for game clients to connect to
+    "HostName": "192.168.1.250",         // public ip for game clients to connect to
     "BasePort": 30000,                   // the ports for individual lobbies start here
     "MaximumSlots": 10000                // max number of lobbies 
   },
