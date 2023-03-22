@@ -5,6 +5,7 @@ services:
     image: rabbitmq:3.9-management
     container_name: rabbitmq
     network_mode: host
+    restart: unless-stopped
     healthcheck:
       test: rabbitmq-diagnostics -q ping
       interval: 10s
