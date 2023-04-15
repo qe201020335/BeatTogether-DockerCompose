@@ -11,8 +11,9 @@ You are welcomed to use the discussion board. [Discussions](https://github.com/q
   1. Clone or download this repo
   2. Modify the json config files for your need. See the limited docs [below](#json-configs).
   3. **Block access to ports 5672 and 15672 from the Internet using firewall such as ufw**
-  4. Make sure your current working directory and `PWD` both are the root of this repo 
+  4. Make sure your current working directory and `PWD` both are the root of this repo
   5. `docker compose up -d`
+     - If you are updating, `docker compose down` and `docker compose pull` before `docker compose up -d`
   6. Add this server to the BeatTogether mod's config. See [below](#beattogether-mod-configuration)
 
 ## Json Configs
