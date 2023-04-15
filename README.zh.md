@@ -13,6 +13,7 @@
   3. **使用防火墙（比如ufw）屏蔽5672和15672端口的互联网访问**
   4. 确认你的当前工作目录(current working directory) 和 `PWD` 都在这个仓库的根目录 
   5. `docker compose up -d`
+     - 如果你在更新, 先 `docker compose down` 和 `docker compose pull` 再 `docker compose up -d`
   6. 将这个服务器添加进BeatTogether mod的设置中。 详见[下方](#BeatTogether-Mod-设置)
 
 ## Json 设置文件
