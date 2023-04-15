@@ -24,6 +24,7 @@ You are welcomed to use the discussion board. [Discussions](https://github.com/q
 `master.json`
 ```
 {
+  "Urls": "http://0.0.0.0:8989",
   "MasterServer": {
     "EndPoint": "0.0.0.0:2328"           // ip and port for the master server to listen on
   },
