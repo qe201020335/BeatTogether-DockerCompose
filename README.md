@@ -24,8 +24,9 @@ You are welcomed to use the discussion board. [Discussions](https://github.com/q
 `master.json`
 ```
 {
+  "Urls": "http://0.0.0.0:8989",         // ip and port for the GameLift service to listen on
   "MasterServer": {
-    "EndPoint": "0.0.0.0:2328"           // ip and port for the master server to listen on
+    "EndPoint": "0.0.0.0:2328"           // ip and port for the master server to listen on (will be deprecated & only for backwards compatibility)
   },
   "Serilog": {
     "File": {
@@ -103,7 +104,7 @@ You are welcomed to use the discussion board. [Discussions](https://github.com/q
     {                                                       // add this
       "ServerName": "Some Server Namer",
       "HostName": "192.168.1.250",                          // ip or host name of the master server
-      "Port": 2328,                                         // port of the master server
+      "ApiUrl": "http://192.168.1.250:8989",                // replace the ip and port with the ones for MasterServer GameLift service
       "StatusUri": "http://192.168.1.250:23280/status",     // replace the ip and port with the ones for status api server
       "MaxPartySize": 10
     },

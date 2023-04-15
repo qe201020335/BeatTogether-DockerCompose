@@ -24,8 +24,9 @@
 `master.json`
 ```
 {
+  "Urls": "http://0.0.0.0:8989",         // 用于主服务器的GameLift服务监听的ip和端口
   "MasterServer": {
-    "EndPoint": "0.0.0.0:2328"           // 用于主服务器监听的ip和端口
+    "EndPoint": "0.0.0.0:2328"           // 用于主服务器监听的ip和端口 (将被弃用，仅为向后兼容)
   },
   "Serilog": {
     "File": {
@@ -103,7 +104,7 @@
     {                                                       // 添加这一段
       "ServerName": "Some Server Namer",
       "HostName": "192.168.1.250",                          // 主服务器的地址
-      "Port": 2328,                                         // 主服务器的端口
+      "ApiUrl": "http://192.168.1.250:8989",                // 将地址和端口替换为主服务器GameLift服务的
       "StatusUri": "http://192.168.1.250:23280/status",     // 将地址和端口替换为api服务器的
       "MaxPartySize": 10
     },
