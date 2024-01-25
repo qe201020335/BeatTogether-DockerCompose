@@ -6,6 +6,9 @@ services:
     container_name: rabbitmq
     network_mode: host
     restart: unless-stopped
+    ports:
+     - "127.0.0.1:5672:5672"
+     - "127.0.0.1:15672:15672"
     healthcheck:
       test: rabbitmq-diagnostics -q ping
       interval: 10s
@@ -24,6 +27,8 @@ services:
       driver: json-file
       options:
         max-size: 4m
+    ports:
+     - "8989:8989"
     volumes:
       - ${PWD}/master.json:/app/appsettings.Production.json
       - ${PWD}/logs:/app/logs
@@ -60,6 +65,8 @@ services:
       driver: json-file
       options:
         max-size: 4m
+    ports:
+     - "23280:23280"
     volumes:
       - ${PWD}/api.json:/app/appsettings.Production.json
       - ${PWD}/logs:/app/logs
