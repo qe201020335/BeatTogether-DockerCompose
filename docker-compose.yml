@@ -4,7 +4,6 @@ services:
   rabbitmq:
     image: rabbitmq:3.9-management
     container_name: rabbitmq
-    network_mode: host
     restart: unless-stopped
     ports:
      - "127.0.0.1:5672:5672"
