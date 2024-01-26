@@ -27,8 +27,6 @@ services:
       driver: json-file
       options:
         max-size: 4m
-    ports:
-     - "8989:8989"
     volumes:
       - ${PWD}/master.json:/app/appsettings.Production.json
       - ${PWD}/logs:/app/logs
@@ -65,8 +63,6 @@ services:
       driver: json-file
       options:
         max-size: 4m
-    ports:
-     - "23280:23280"
     volumes:
       - ${PWD}/api.json:/app/appsettings.Production.json
       - ${PWD}/logs:/app/logs
