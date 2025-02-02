@@ -2,7 +2,9 @@
 [![en](https://img.shields.io/badge/lang-en-blue.svg?style=for-the-badge)](/README.md)
 [![zh](https://img.shields.io/badge/语言-中文-red.svg?style=for-the-badge)](/README.zh.md)
 
-一个使用docker compose的简易BeatTogether开服指南
+使用 Docker Compose 运行 **可扩展** 的 [BeatTogether](https://github.com/BeatTogether) 服务器的简单指南。
+
+如果你只是需要一个小型多人服务器，建议使用 [UnifiedServer](https://github.com/BeatTogether/BeatTogether.UnifiedServer)。
 
 欢迎使用讨论版 [Discussions](https://github.com/qe201020335/BeatTogether-DockerCompose/discussions)
 
@@ -10,7 +12,7 @@
   0. 确认你在使用Linux并且安装了Docker
   1. 克隆或者下载此仓库
   2. 按照你的需求修改json设置文件。 文档见[下方](#Json-设置文件).
-  3. 确认你的当前工作目录(current working directory) 和 `PWD` 都在这个仓库的根目录 
+  3. 确认你的当前工作目录(current working directory) 在这个仓库的根目录 
   4. `docker compose up -d`
      - 如果你在更新, 先 `docker compose down` 和 `docker compose pull` 再 `docker compose up -d`
   5. 将这个服务器添加进BeatTogether mod的设置中。 详见[下方](#BeatTogether-Mod-设置)

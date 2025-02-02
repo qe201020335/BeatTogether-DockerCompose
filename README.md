@@ -2,7 +2,9 @@
 [![en](https://img.shields.io/badge/lang-en-blue.svg?style=for-the-badge)](/README.md)
 [![zh](https://img.shields.io/badge/语言-中文-red.svg?style=for-the-badge)](/README.zh.md)
 
-A simple guide on hosting BeatTogether server using docker compose
+A simple guide on hosting the **Scalable** [BeatTogether](https://github.com/BeatTogether) server using docker compose.
+
+If you are hosting a small multiplayer server, consider using the [UnifiedServer](https://github.com/BeatTogether/BeatTogether.UnifiedServer) instead.
 
 You are welcomed to use the discussion board. [Discussions](https://github.com/qe201020335/BeatTogether-DockerCompose/discussions)
 
@@ -10,7 +12,7 @@ You are welcomed to use the discussion board. [Discussions](https://github.com/q
   0. Make sure you are on Linux and have Docker installed
   1. Clone or download this repo
   2. Modify the json config files for your need. See the limited docs [below](#json-configs).
-  3. Make sure your current working directory and `PWD` both are the root of this repo
+  3. Make sure your current working directory is the root of this repo
   4. `docker compose up -d`
      - If you are updating, `docker compose down` and `docker compose pull` before `docker compose up -d`
   5. Add this server to the BeatTogether mod's config. See [below](#beattogether-mod-configuration)
