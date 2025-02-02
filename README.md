@@ -24,7 +24,7 @@ You are welcomed to use the discussion board. [Discussions](https://github.com/q
   4. `docker compose up -d` to start the servers
 
 ## Json Configs
- - The options included here are not exhaustive but most likely what matters. 
+ - The options included here are not exhaustive but most of the important options are here. 
  - You need to look into the servers' source code to find more available options
  - The config structure may change along BeatTogether server updates
 
