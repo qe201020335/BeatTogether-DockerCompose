@@ -1,6 +1,6 @@
 {
-  "Node": {
-    "HostName": "192.168.1.250",
+  "ServerConfiguration": {
+    "HostEndpoint": "192.168.1.250",
     "BasePort": 30000,
     "MaximumSlots": 10000
   },

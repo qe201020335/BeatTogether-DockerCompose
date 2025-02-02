@@ -20,15 +20,14 @@ You are welcomed to use the discussion board. [Discussions](https://github.com/q
 ## Json Configs
  - The options included here are not exhaustive but most likely what matters. 
  - You need to look into the servers' source code to find more available options
- - The descriptions are based on my understanding of the project.
 
 ### The Master Server 
 `master.json`
 ```
 {
-  "Urls": "http://0.0.0.0:8989",         // ip and port for the GameLift service to listen on
-  "MasterServer": {
-    "EndPoint": "0.0.0.0:2328"           // ip and port for the master server to listen on (will be deprecated & only for backwards compatibility)
+  "Urls": "http://0.0.0.0:8989",         // ip and port that the master server listens on
+  "ServerConfiguration": {
+    "AuthenticateClients": true          // Whether clients should be authenticated
   },
   "Serilog": {
     "File": {
@@ -43,9 +42,9 @@ You are welcomed to use the discussion board. [Discussions](https://github.com/q
 `dedicated.json`
 ```
 {
-  "Node": {
-    "HostName": "192.168.1.250",         // public ip for game clients to connect to
-    "BasePort": 30000,                   // the ports for individual lobbies start here
+  "ServerConfiguration": {
+    "HostEndpoint": "192.168.1.250",     // public ip for game clients to connect to
+    "BasePort": 30000,                   // the port for individual lobbies starts here
     "MaximumSlots": 10000                // max number of lobbies 
   },
   "Serilog": {
@@ -61,17 +60,22 @@ You are welcomed to use the discussion board. [Discussions](https://github.com/q
 `api.json`
 ```
 {
-  "Urls": "http://0.0.0.0:23280",        // ip and port for the api server to listen on    
+  "Urls": "http://0.0.0.0:23280",         // ip and port for the api server to listen on    
   "Status": {
-    "MinimumAppVersion": "1.28.0",       // minimum supported game version
-    "RequiredMods": [                    // minimum required mod versions, if installed
+    "MinimumAppVersion": "1.37.0",        // minimum supported game version
+    "ServerDisplayName": "My BeatTogether Server",
+    "ServerDescription": "My Cross Platform Custom Song Multiplayer Server",
+    "ServerImageUrl": "",
+    "ServerSupportsPPModifiers": true,    // Whether the server supports per-player gameplay modifiers
+    "ServerSupportsPPDifficulties": true, // Whether the server supports per-player difficulties
+    "RequiredMods": [                     // minimum required mod versions, if installed
       {
         "id": "MultiplayerCore",
-        "version": "1.2.0"
+        "version": "1.5.1"
       },
       {
         "id": "BeatTogether",
-        "version": "2.0.1"
+        "version": "2.0.0"
       },
       {
         "id": "BeatSaberPlus_SongOverlay",
@@ -104,9 +108,9 @@ You are welcomed to use the discussion board. [Discussions](https://github.com/q
   "Servers": [
     ...
     {                                                       // add this
-      "ServerName": "Some Server Namer",
+      "ServerName": "Some Server Name",
       "HostName": "192.168.1.250",                          // ip or host name of the master server
-      "ApiUrl": "http://192.168.1.250:8989",                // replace the ip and port with the ones for MasterServer GameLift service
+      "ApiUrl": "http://192.168.1.250:8989",                // replace the ip and port with the ones for MasterServer
       "StatusUri": "http://192.168.1.250:23280/status",     // replace the ip and port with the ones for status api server
       "MaxPartySize": 10
     },

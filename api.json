@@ -1,15 +1,20 @@
 {
   "Urls": "http://0.0.0.0:23280",
   "Status": {
-    "MinimumAppVersion": "1.28.0",
+    "MinimumAppVersion": "1.37.0",
+    "ServerDisplayName": "My BeatTogether Server",
+    "ServerDescription": "My Cross Platform Custom Song Multiplayer Server",
+    "ServerImageUrl": "",
+    "ServerSupportsPPModifiers": true,
+    "ServerSupportsPPDifficulties": true,
     "RequiredMods": [
       {
         "id": "MultiplayerCore",
-        "version": "1.2.0"
+        "version": "1.5.1"
       },
       {
         "id": "BeatTogether",
-        "version": "2.0.1"
+        "version": "2.0.0"
       },
       {
         "id": "BeatSaberPlus_SongOverlay",

@@ -1,7 +1,7 @@
 {
   "Urls": "http://0.0.0.0:8989",
-  "MasterServer": {
-    "EndPoint": "0.0.0.0:2328"
+  "ServerConfiguration": {
+    "AuthenticateClients": true
   },
   "Serilog": {
     "File": {
