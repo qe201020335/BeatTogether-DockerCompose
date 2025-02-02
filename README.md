@@ -9,17 +9,24 @@ If you are hosting a small multiplayer server, consider using the [UnifiedServer
 You are welcomed to use the discussion board. [Discussions](https://github.com/qe201020335/BeatTogether-DockerCompose/discussions)
 
 ## How to Host
+### Fresh Start
   0. Make sure you are on Linux and have Docker installed
   1. Clone or download this repo
   2. Modify the json config files for your need. See the limited docs [below](#json-configs).
   3. Make sure your current working directory is the root of this repo
-  4. `docker compose up -d`
-     - If you are updating, `docker compose down` and `docker compose pull` before `docker compose up -d`
+  4. `docker compose up -d` to start the servers
   5. Add this server to the BeatTogether mod's config. See [below](#beattogether-mod-configuration)
+
+### Update Existing Server
+  1. Stop the servers with `docker compose down` if not already
+  2. `docker compose pull` to get the latest images
+  3. IMPORTANT: Compare your config files with the ones from this repo and update yours if needed. The config structure may have changed according to server updates
+  4. `docker compose up -d` to start the servers
 
 ## Json Configs
  - The options included here are not exhaustive but most likely what matters. 
  - You need to look into the servers' source code to find more available options
+ - The config structure may change along BeatTogether server updates
 
 ### The Master Server 
 `master.json`

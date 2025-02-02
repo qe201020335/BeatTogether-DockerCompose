@@ -2,24 +2,31 @@
 [![en](https://img.shields.io/badge/lang-en-blue.svg?style=for-the-badge)](/README.md)
 [![zh](https://img.shields.io/badge/语言-中文-red.svg?style=for-the-badge)](/README.zh.md)
 
-使用 Docker Compose 运行 **可扩展** 的 [BeatTogether](https://github.com/BeatTogether) 服务器的简单指南。
+使用 Docker Compose 部署 **可扩展** 的 [BeatTogether](https://github.com/BeatTogether) 服务器的简单指南。
 
 如果你只是需要一个小型多人服务器，建议使用 [UnifiedServer](https://github.com/BeatTogether/BeatTogether.UnifiedServer)。
 
 欢迎使用讨论版 [Discussions](https://github.com/qe201020335/BeatTogether-DockerCompose/discussions)
 
 ## 如何开服
+### 全新部署
   0. 确认你在使用Linux并且安装了Docker
   1. 克隆或者下载此仓库
   2. 按照你的需求修改json设置文件。 文档见[下方](#Json-设置文件).
   3. 确认你的当前工作目录(current working directory) 在这个仓库的根目录 
-  4. `docker compose up -d`
-     - 如果你在更新, 先 `docker compose down` 和 `docker compose pull` 再 `docker compose up -d`
-  5. 将这个服务器添加进BeatTogether mod的设置中。 详见[下方](#BeatTogether-Mod-设置)
+  4. 运行 `docker compose up -d` 启动服务器
+  5. 将这个服务器添加进 BeatTogether 的Mod的设置中。 详见[下方](#BeatTogether-Mod-设置)
+
+### 更新现有服务器
+1. 如果服务器还在运行，先执行 `docker compose down` 来停止服务器
+2. 执行 `docker compose pull` 以拉取最新镜像。
+3. **重要**：用你的设置文件与此仓库中的文件进行对比，并在必要时更新你的设置文件。服务器更新可能导致设置文件结构发生变化
+4. 运行 `docker compose up -d` 启动服务器
 
 ## Json 设置文件
- - 这里并不包含全部的选项，下方仅包含了和开服相关的最重要的选项 
+ - 这里并不包含全部的选项，但涵盖了大部分重要设置
  - 你需要去阅读服务器源代码来找到更多的可用选项
+ - 设置文件结构可能会随 BeatTogether 服务器的更新而发生变化。
 
 ### 主服务器
 `master.json`
