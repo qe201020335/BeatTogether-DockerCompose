@@ -1,6 +1,4 @@
-version: "3.9"
 services:
-
   rabbitmq:
     image: rabbitmq:3.9-management
     container_name: rabbitmq
@@ -27,8 +25,8 @@ services:
       options:
         max-size: 4m
     volumes:
-      - ${PWD}/master.json:/app/appsettings.Production.json
-      - ${PWD}/logs:/app/logs
+      - ./master.json:/app/appsettings.Production.json
+      - ./logs:/app/logs
 
   BeatTogether.DedicatedServer:
     container_name: btdedicated
@@ -45,8 +43,8 @@ services:
       options:
         max-size: 4m
     volumes:
-      - ${PWD}/dedicated.json:/app/appsettings.Production.json
-      - ${PWD}/logs:/app/logs
+      - ./dedicated.json:/app/appsettings.Production.json
+      - ./logs:/app/logs
 
   BeatTogether.Status.Api:
     container_name: btapi
@@ -63,5 +61,5 @@ services:
       options:
         max-size: 4m
     volumes:
-      - ${PWD}/api.json:/app/appsettings.Production.json
-      - ${PWD}/logs:/app/logs
+      - ./api.json:/app/appsettings.Production.json
+      - ./logs:/app/logs
